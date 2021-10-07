@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
+import Footer from "./components/Footer";
+import { DataProvider } from "./components/DataProvider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <DataProvider>
+      <div className="App">
+        <h1>Work TO-DOS</h1>
+        <p className="yellow">
+          Enter text into the input field to add items to your list.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <p className="green">Click the item to mark it as complete.</p>
+        <p className="blue">Click the "X" to remove the item from your list.</p>
+        <TodoForm />
+        <TodoList />
+        <Footer />
+      </div>
+    </DataProvider>
   );
 }
 
